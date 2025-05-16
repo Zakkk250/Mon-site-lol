@@ -1,0 +1,240 @@
+/* Police globale */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at 50% 50%, #001f54, #000a2a 80%);;
+  color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(0, 180, 255, 0.2), transparent 50%);
+  z-index: -1;
+  filter: blur(200px);
+}
+h1, h2 {
+  color: #00b4ff;
+  text-shadow: 0 0 10px #00b4ff, 0 0 20px #00b4ff, 0 0 30px #00b4ff;
+}
+
+header {
+  background-color: rgba(0, 15, 45, 0.9);
+  padding: 20px;
+  text-align: center;
+  border-bottom: 1px solid #00b4ff;
+  box-shadow: 0 4px 20px rgba(0, 180, 255, 0.3);
+}
+
+header h1 {
+  margin: 0;
+  color:#00b4ff;
+  font-size: 3rem;
+  margin-bottom: 20px;
+   text-shadow: 0 0 15px #00b4ff, 0 0 30px #00b4ff, 0 0 45px #00b4ff;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: #00b4ff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  text-shadow: 0 0 10px #00b4ff, 0 0 20px #00b4ff;
+}
+
+section#champions {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); 
+  grid-gap: 15px;
+  justify-items: center;
+}
+
+.champion {
+  background-color: rgba(0, 25, 60, 0.8);
+  border: 1px solid #333333;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+  width: 150px;
+  transition: transform 0.2s ease,box-shadow 0.2s ease;
+  box-shadow: 0 0 15px rgba(0, 180, 255, 0.2);
+}
+
+.champion img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.champion h3 {
+  margin: 10px 0 5px 0;
+  font-size: 1.2rem;
+  color: #ffffff;
+  text-shadow: 0 0 10px #00b4ff;
+  
+}
+
+.champion p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+  text-align: justify;
+   color: #c0c0c0;
+}
+
+.champion:hover {
+  transform: scale(1.05);
+  background-color:  rgba(0, 35, 80, 0.9);
+  box-shadow: 0 0 30px #00b4ff, 0 0 60px #00b4ff;
+}
+
+/* Responsive : ajuster à 4 colonnes pour écrans plus petits */
+@media screen and (max-width: 1200px) {
+  section#champions {
+    grid-template-columns: repeat(4, 1fr); /* 4 colonnes */
+  }
+}
+
+/* Responsive : ajuster à 2 colonnes pour très petits écrans */
+@media screen and (max-width: 768px) {
+  section#champions {
+    grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
+  }
+}
+
+footer {
+  background-color: rgba(0, 15, 45, 0.9);
+  color: #00b4ff;
+  text-align: center;
+  padding: 10px;
+  border-top: 1px solid #00b4ff;
+  box-shadow: 0 -4px 20px rgba(0, 180, 255, 0.3);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+}
+
+
+#items h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+/* Grille des objets */
+#items {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 colonnes */
+  grid-gap: 15px;
+  justify-items: center;
+}
+
+/* Style des cartes d'objets */
+.item {
+	 padding: 20px;
+  margin-bottom: 30px;
+  background-color: #1f1f1f;
+  border: 1px solid #333333;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+  width: 150px;
+  transition: transform 0.2s ease;
+}
+
+.item img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.item h3 {
+  margin: 10px 0 5px 0;
+  font-size: 1.2rem;
+}
+
+.item p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+  text-align: justify;
+}
+
+/* Effet au survol */
+.item:hover {
+  transform: scale(1.05);
+  background-color: #2c2c2c;
+}
+
+/* Responsive */
+@media screen and (max-width: 1200px) {
+  #items {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+/* Images des champions */
+.champion {
+  position: relative;
+  overflow: hidden;
+}
+
+.champion-illustration {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+  border-radius: 8px;
+}
+
+.champion-illustration img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+    z-index: 0;
+  position: relative;
+}
+
+/* Effet au survol */
+.champion:hover .champion-illustration {
+  opacity: 1;
+  z-index: 2;
+}
+
+}
+h3 {
+  color: #ffffff;
+  text-shadow: 0 0 5px #00b4ff;
+}
